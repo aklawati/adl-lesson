@@ -46,7 +46,7 @@ section{padding:52px 0 8px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.case{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.case{min-width:0;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
 .case-top{display:flex;gap:12px;align-items:center;margin-bottom:6px}
 .case-ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:26px;flex:none}
 .case-tag{font-size:14px;color:var(--muted);font-weight:700}
@@ -180,13 +180,44 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
   .hero-grid,.grid2,.story,.quiz-wrap,.vs{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr}
   .grid4{grid-template-columns:1fr 1fr}
-  .cases,.moses{grid-template-columns:1fr}
+  .cases,.moses,.rules,.war-grid{grid-template-columns:minmax(0,1fr)}
+  .usul,.m-panels,.duty{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .usul-c.on{transform:none}
   .hero h1{font-size:46px}
   .story-img{position:static;max-width:300px;margin:0 auto}
   .quran{font-size:24px}
   .sec-head h2{font-size:28px}
 }
 @media print{nav{display:none}.step{display:block!important}}
+.usul{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.usul-c{min-width:0;background:#fff;border:2px solid var(--line);border-radius:18px;padding:16px;text-align:center;box-shadow:var(--shadow);position:relative;display:flex;flex-direction:column;align-items:center}
+.usul-c .un{width:40px;height:40px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;font-weight:800}
+.usul-c h3{margin:8px 0 2px;font-size:26px;color:var(--teal)}
+.usul-c p{margin:0 0 8px;font-size:16px;line-height:1.7;flex:1}
+.usul-c .uq{font-family:"Amiri";font-size:18px;color:#1d4d2b;line-height:1.8}
+.usul-c.on{border-color:var(--gold);background:var(--gold-soft);transform:translateY(-6px)}
+.usul-c.on .un{background:var(--gold);color:#1f2a2e}
+.usul-c .here{position:absolute;top:-13px;background:var(--red);color:#fff;font-size:13px;padding:1px 12px;border-radius:999px}
+.m-panels{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:6px 0 18px}
+.m-panel svg{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
+.m-panel figcaption{font-size:16px;color:var(--ink);font-weight:500}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.rule{border-radius:12px;padding:10px 14px;font-weight:700;font-size:17px}
+.rule.no{background:var(--red-soft);color:#7a1f1f}
+.rule.yes{background:var(--green-soft);color:#1d5530}
+.war-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.why-c h3{margin-top:0;color:var(--teal);font-size:24px}
+.why-c ol{padding-inline-start:22px;margin:0;display:grid;gap:8px;font-size:18px;line-height:1.8}
+.why-c small{color:var(--muted)}
+.ex-line{margin-top:14px;background:var(--gold-soft);border-radius:12px;padding:10px 14px;font-size:17px}
+.duty{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.duty div{background:var(--teal-soft);border-radius:12px;padding:10px;text-align:center;font-size:16px}
+.duty b{color:var(--teal)}
+@media (max-width:820px){
+  .cases,.moses,.rules,.war-grid{grid-template-columns:minmax(0,1fr)}
+  .usul,.m-panels,.duty{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .usul-c.on{transform:none}
+}
 </style>
 </head>
 <body>
@@ -194,11 +225,14 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
 <nav><div class="wrap">
   <a href="#goals">أهداف الدرس</a>
   <a href="#dict">قاموسي</a>
+  <a href="#usul">أصول الدين</a>
   <a href="#meaning">ما هو العدل؟</a>
   <a href="#quran">العدل في القرآن</a>
   <a href="#story">قصة الدرع</a>
   <a href="#examples">مواقف حقيقية</a>
+  <a href="#war">العدل في الحرب</a>
   <a href="#video">العدل الإلهي</a>
+  <a href="#why">لماذا فقير وغني؟</a>
   <a href="#quiz">تحدّي العدل</a>
   <a href="#discuss">أحاور وأناقش</a>
   <a href="#summary">أقول وأفعل</a>
@@ -255,6 +289,26 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
 </section>
 
 <!-- meaning -->
+<!-- usul -->
+<section id="usul">
+  <div class="sec-head"><div class="ic">🕌</div><h2>أصول الدين الخمسة<small>العدل هو الأصل الثاني من أصول الدين</small></h2></div>
+  <div class="usul">
+    <div class="usul-c"><div class="un">1</div><h3>التوحيد</h3><p>الله واحدٌ أحد، لا شريك له ولا مثيل.</p><span class="uq">﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾</span></div>
+    <div class="usul-c on"><div class="un">2</div><h3>العدل</h3><p>الله عادلٌ لا يظلم أحداً أبداً، وكل أفعاله حكمة.</p><span class="uq">﴿وَمَا رَبُّكَ بِظَلَّامٍ لِّلْعَبِيدِ﴾</span><b class="here">درسنا اليوم</b></div>
+    <div class="usul-c"><div class="un">3</div><h3>النبوّة</h3><p>أرسل الله الأنبياء لهداية الناس، وخاتمهم محمد ﷺ.</p><span class="uq">﴿مَّا كَانَ مُحَمَّدٌ أَبَا أَحَدٍ مِّن رِّجَالِكُمْ وَلَٰكِن رَّسُولَ اللَّهِ وَخَاتَمَ النَّبِيِّينَ﴾</span></div>
+    <div class="usul-c"><div class="un">4</div><h3>الإمامة</h3><p>الأئمة المعصومون خلفاء رسول الله ﷺ، أولهم أمير المؤمنين علي عليه السلام وآخرهم الإمام المهدي عجّل الله فرجه.</p><span class="uq">﴿إِنَّمَا وَلِيُّكُمُ اللَّهُ وَرَسُولُهُ وَالَّذِينَ آمَنُوا﴾</span></div>
+    <div class="usul-c"><div class="un">5</div><h3>المعاد</h3><p>يبعث الله الناس يوم القيامة للحساب والجزاء.</p><span class="uq">﴿إِنَّ السَّاعَةَ لَآتِيَةٌ﴾</span></div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h3 style="margin-top:0;color:var(--teal)">كيف يرتبط العدل ببقية الأصول؟ 🔗</h3>
+    <ul class="vlist">
+      <li><b>العدل والنبوّة:</b> من عدل الله أنه لم يترك الناس بلا هداية، فأرسل إليهم الأنبياء يعلّمونهم الحق.</li>
+      <li><b>العدل والإمامة:</b> من عدله أن جعل بعد النبي ﷺ أئمة يحفظون الدين، وكان أمير المؤمنين عليه السلام مثالاً للعدل — كما في قصة الدرع.</li>
+      <li><b>العدل والمعاد:</b> في الدنيا قد يفلت الظالم، لكن يوم القيامة هو يوم العدل الكامل: ﴿وَنَضَعُ الْمَوَازِينَ الْقِسْطَ لِيَوْمِ الْقِيَامَةِ فَلَا تُظْلَمُ نَفْسٌ شَيْئًا﴾ <span style="color:var(--muted);font-size:15px">(الأنبياء: 47)</span></li>
+    </ul>
+  </div>
+</section>
+
 <section id="meaning">
   <div class="sec-head"><div class="ic">⚖️</div><h2>العدلُ أساسُ المُلك<small>أقرأ وأتعرّف</small></h2></div>
   <div class="grid2">
@@ -400,6 +454,52 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
   </div>
 </section>
 
+<!-- war -->
+<section id="war">
+  <div class="sec-head"><div class="ic">🛡️</div><h2>العدل حتى في الحرب<small>هل يسقط العدل عندما يقاتل الإنسان عدوّه؟</small></h2></div>
+  <div class="card">
+    <p style="margin-top:0">الحرب أصعب موقف يُمتحن فيه العدل؛ فالإنسان يكون غاضباً وخائفاً، ومع ذلك وضع الإسلام قواعد واضحة:</p>
+    <div class="quran">﴿وَقَاتِلُوا فِي سَبِيلِ اللَّهِ الَّذِينَ يُقَاتِلُونَكُمْ وَلَا تَعْتَدُوا ۚ إِنَّ اللَّهَ لَا يُحِبُّ الْمُعْتَدِينَ﴾ <span class="ref">(البقرة: 190)</span></div>
+    <div class="rules">
+      <div class="rule no">✘ لا يُقتل الطفل ولا المرأة ولا الشيخ الكبير</div>
+      <div class="rule no">✘ لا غدر ولا نقض للعهود</div>
+      <div class="rule no">✘ لا تمثيل بجثث القتلى</div>
+      <div class="rule no">✘ لا قطع للأشجار إلا للضرورة</div>
+      <div class="rule no">✘ لا يُقتل الهارب ولا يُجهز على الجريح</div>
+      <div class="rule yes">✔ الإحسان إلى الأسير وإطعامه</div>
+    </div>
+    <p style="margin-bottom:0;color:var(--muted);font-size:17px">من وصايا رسول الله ﷺ لجيوشه: «لا تغدروا، ولا تمثّلوا، ولا تقتلوا شيخاً فانياً ولا صبياً ولا امرأة، ولا تقطعوا شجراً إلا أن تضطروا إليها».</p>
+  </div>
+
+  <div class="war-grid">
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#e3f0ef">💧</span><div><div class="case-tag">معركة صفّين</div><h3>ماء الفرات</h3></div></div>
+      <p>سيطر جيش معاوية على ماء الفرات ومنعوا جيش أمير المؤمنين عليه السلام من الشرب. فلما استعاد جيش الإمام الماء، طلب بعض أصحابه أن يمنعوهم كما مُنعوا. فرفض الإمام، وترك الماء مباحاً للجميع حتى لأعدائه.</p>
+      <div class="lesson-box" style="font-size:17px">العدو لا يبرّر الظلم: ﴿وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا﴾</div>
+    </div>
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#fbf1dc">📜</span><div><div class="case-tag">نهج البلاغة</div><h3>وصية علي لجيشه</h3></div></div>
+      <p>أوصى أمير المؤمنين عليه السلام جيشه قبل القتال:</p>
+      <div class="hadith" style="font-size:22px;margin:6px 0 10px">«لا تقاتلوهم حتى يبدؤوكم… فإذا كانت الهزيمة فلا تقتلوا مُدبراً، ولا تُجهزوا على جريح، ولا تهيجوا النساء بأذى»</div>
+      <div class="lesson-box" style="font-size:17px">لا نبدأ بالعدوان، ولا نؤذي من لا يقاتل.</div>
+    </div>
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#e4f3e8">🕊️</span><div><div class="case-tag">فتح مكة</div><h3>«اذهبوا فأنتم الطلقاء»</h3></div></div>
+      <p>بعد سنوات من أذى قريش للمسلمين وإخراجهم من ديارهم، دخل رسول الله ﷺ مكة منتصراً وهم في قبضته، فعفا عنهم وقال: «اذهبوا فأنتم الطلقاء».</p>
+      <div class="lesson-box" style="font-size:17px">القوي العادل يعفو عند المقدرة — وهذا هو ﴿الصَّفْحَ الْجَمِيلَ﴾.</div>
+    </div>
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#f3eaf6">🍞</span><div><div class="case-tag">سورة الإنسان</div><h3>طعام الأسير</h3></div></div>
+      <p>مدح القرآن أهل البيت عليهم السلام لأنهم أعطوا طعامهم وهم صائمون لمسكين ويتيم <b>وأسير</b>: ﴿وَيُطْعِمُونَ الطَّعَامَ عَلَىٰ حُبِّهِ مِسْكِينًا وَيَتِيمًا وَأَسِيرًا﴾.</p>
+      <div class="lesson-box" style="font-size:17px">الأسير الذي كان يقاتلنا له حق في الطعام والكرامة.</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <b>🌍 واليوم؟</b> القوانين الدولية الحديثة تمنع استهداف المدنيين والمستشفيات والمدارس، وتوجب حسن معاملة الأسرى. والإسلام قرّر هذه المبادئ قبل أكثر من <b>1400 سنة</b>. وكل حرب يُقتل فيها الأطفال والأبرياء أو يُمنع عنهم الماء والدواء، هي ظلم مهما كانت أسبابها.
+    <p style="margin-bottom:0"><b>🗣️ ناقش:</b> لماذا يكون العدل مع العدو أصعب من العدل مع الصديق؟</p>
+  </div>
+</section>
+
 <!-- video -->
 <section id="video">
   <div class="sec-head"><div class="ic">🎬</div><h2>العدل الإلهي: لماذا يختلف حال الناس؟<small>من فيديو «أصول الدين (3): العدل»</small></h2></div>
@@ -419,6 +519,12 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
   <div class="card" style="margin-top:22px">
     <h3 style="margin-top:0;color:var(--teal)">قصة النبي موسى عليه السلام عند عين الماء <span class="out-tag">من الفيديو</span></h3>
     <p style="margin-top:0">طلب موسى عليه السلام أن يرى كيف يعدل الله بين عباده، فوقف على جبل يطلّ على عين ماء وشاهد ما يلي:</p>
+    <div class="m-panels">
+      <figure class="m-panel"><svg viewBox="0 0 320 220" role="img"><rect width="320" height="220" fill="#f6e3bf"/><path d="M0 120 L60 60 L110 110 L170 40 L240 115 L320 70 L320 220 L0 220Z" fill="#d9b27c"/><path d="M0 150 Q160 130 320 150 L320 220 L0 220Z" fill="#e8cf9f"/><ellipse cx="170" cy="178" rx="62" ry="16" fill="#5fb3d6" stroke="#3b8fb5" stroke-width="2"/><ellipse cx="160" cy="175" rx="20" ry="4" fill="#bfe6f5"/><rect x="252" y="120" width="7" height="60" fill="#8a5d2a"/><path d="M255 122 q-30 -8 -38 8 M255 122 q30 -8 38 8 M255 122 q-18 -24 -34 -18 M255 122 q18 -24 34 -18" stroke="#3f8a3a" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="40" cy="35" r="16" fill="#ffcf57"/><g transform="translate(80,196) scale(-1,1)"><rect x="-30" y="-40" width="60" height="24" rx="12" fill="#7b4a26"/><path d="M22 -36 L40 -62 L50 -58 L36 -30Z" fill="#7b4a26"/><path d="M40 -62 L46 -70 L50 -60Z" fill="#5a3418"/><rect x="-26" y="-18" width="6" height="18" fill="#5a3418"/><rect x="-12" y="-18" width="6" height="18" fill="#5a3418"/><rect x="8" y="-18" width="6" height="18" fill="#5a3418"/><rect x="20" y="-18" width="6" height="18" fill="#5a3418"/><path d="M-30 -36 Q-44 -30 -40 -14" stroke="#5a3418" stroke-width="5" fill="none"/><path d="M-8 -40 L-4 -74 L10 -74 L12 -40Z" fill="#9b2c2c"/><circle cx="3" cy="-82" r="9" fill="#e0ac7e"/><path d="M-7 -85 Q3 -97 13 -85Z" fill="#222"/></g><circle cx="210" cy="188" r="18" fill="#ffd54f" opacity=".45"/><path d="M200 196 Q196 178 205 176 L215 176 Q224 178 220 196Z" fill="#a0692e" stroke="#6e4a22"/><path d="M204 176 L210 170 L216 176" stroke="#6e4a22" fill="none" stroke-width="2"/><text x="210" y="191" text-anchor="middle" font-size="10" fill="#ffd54f" font-weight="800">$</text><path d="M40 200 l-18 0 M40 190 l-24 0" stroke="#7b4a26" stroke-width="3" stroke-dasharray="4 4"/><circle cx="296" cy="24" r="16" fill="#0f5c63"/><text x="296" y="30" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Tajawal">1</text></svg><figcaption>فارس يشرب من العين ثم يرحل… وينسى كيس ذهبه</figcaption></figure>
+      <figure class="m-panel"><svg viewBox="0 0 320 220" role="img"><rect width="320" height="220" fill="#f6e3bf"/><path d="M0 120 L60 60 L110 110 L170 40 L240 115 L320 70 L320 220 L0 220Z" fill="#d9b27c"/><path d="M0 150 Q160 130 320 150 L320 220 L0 220Z" fill="#e8cf9f"/><ellipse cx="170" cy="178" rx="62" ry="16" fill="#5fb3d6" stroke="#3b8fb5" stroke-width="2"/><ellipse cx="160" cy="175" rx="20" ry="4" fill="#bfe6f5"/><rect x="252" y="120" width="7" height="60" fill="#8a5d2a"/><path d="M255 122 q-30 -8 -38 8 M255 122 q30 -8 38 8 M255 122 q-18 -24 -34 -18 M255 122 q18 -24 34 -18" stroke="#3f8a3a" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="40" cy="35" r="16" fill="#ffcf57"/><g transform="translate(200,200) scale(1.15)"><path d="M-13 0 L-9 -46 L9 -46 L13 0Z" fill="#2f855a"/><path d="M-9 -40 L-20 -18 M9 -40 L20 -18" stroke="#2f855a" stroke-width="6" stroke-linecap="round"/><circle cx="0" cy="-55" r="10" fill="#e8b98f"/><path d="M-11 -58 Q0 -72 11 -58Z" fill="#3a2a1a"/></g><path d="M222 182 Q218 164 227 162 L237 162 Q246 164 242 182Z" fill="#a0692e" stroke="#6e4a22"/><path d="M226 162 L232 156 L238 162" stroke="#6e4a22" fill="none" stroke-width="2"/><text x="232" y="177" text-anchor="middle" font-size="10" fill="#ffd54f" font-weight="800">$</text><g transform="translate(110,200)"><ellipse cx="0" cy="-12" rx="14" ry="9" fill="#fff" stroke="#bbb"/><circle cx="13" cy="-16" r="5" fill="#444"/><rect x="-8" y="-5" width="3" height="7" fill="#444"/><rect x="6" y="-5" width="3" height="7" fill="#444"/></g><g transform="translate(80,205)"><ellipse cx="0" cy="-12" rx="14" ry="9" fill="#fff" stroke="#bbb"/><circle cx="13" cy="-16" r="5" fill="#444"/><rect x="-8" y="-5" width="3" height="7" fill="#444"/><rect x="6" y="-5" width="3" height="7" fill="#444"/></g><g transform="translate(140,208)"><ellipse cx="0" cy="-12" rx="14" ry="9" fill="#fff" stroke="#bbb"/><circle cx="13" cy="-16" r="5" fill="#444"/><rect x="-8" y="-5" width="3" height="7" fill="#444"/><rect x="6" y="-5" width="3" height="7" fill="#444"/></g><circle cx="296" cy="24" r="16" fill="#0f5c63"/><text x="296" y="30" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Tajawal">2</text></svg><figcaption>راعي غنم صغير يجد الكيس فيأخذه ويمضي</figcaption></figure>
+      <figure class="m-panel"><svg viewBox="0 0 320 220" role="img"><rect width="320" height="220" fill="#f6e3bf"/><path d="M0 120 L60 60 L110 110 L170 40 L240 115 L320 70 L320 220 L0 220Z" fill="#d9b27c"/><path d="M0 150 Q160 130 320 150 L320 220 L0 220Z" fill="#e8cf9f"/><ellipse cx="170" cy="178" rx="62" ry="16" fill="#5fb3d6" stroke="#3b8fb5" stroke-width="2"/><ellipse cx="160" cy="175" rx="20" ry="4" fill="#bfe6f5"/><rect x="252" y="120" width="7" height="60" fill="#8a5d2a"/><path d="M255 122 q-30 -8 -38 8 M255 122 q30 -8 38 8 M255 122 q-18 -24 -34 -18 M255 122 q18 -24 34 -18" stroke="#3f8a3a" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="40" cy="35" r="16" fill="#ffcf57"/><g transform="translate(120,202) scale(1.35)"><path d="M-13 0 L-9 -46 L9 -46 L13 0Z" fill="#8d8d8d"/><path d="M-9 -40 L-20 -18 M9 -40 L20 -18" stroke="#8d8d8d" stroke-width="6" stroke-linecap="round"/><circle cx="0" cy="-55" r="10" fill="#c98f5f"/><path d="M-11 -58 Q0 -72 11 -58Z" fill="#fff"/></g><rect x="148" y="198" width="44" height="5" rx="2" fill="#8a5d2a" transform="rotate(-6 170 204)"/><rect x="148" y="193" width="44" height="5" rx="2" fill="#8a5d2a" transform="rotate(-2 170 204)"/><rect x="148" y="188" width="44" height="5" rx="2" fill="#8a5d2a" transform="rotate(2 170 204)"/><rect x="148" y="183" width="44" height="5" rx="2" fill="#8a5d2a" transform="rotate(6 170 204)"/><text x="120" y="120" text-anchor="middle" font-size="20">💤</text><circle cx="296" cy="24" r="16" fill="#0f5c63"/><text x="296" y="30" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Tajawal">3</text></svg><figcaption>شيخ فقير يضع حطبه ويستريح عند العين</figcaption></figure>
+      <figure class="m-panel"><svg viewBox="0 0 320 220" role="img"><rect width="320" height="220" fill="#f6e3bf"/><path d="M0 120 L60 60 L110 110 L170 40 L240 115 L320 70 L320 220 L0 220Z" fill="#d9b27c"/><path d="M0 150 Q160 130 320 150 L320 220 L0 220Z" fill="#e8cf9f"/><ellipse cx="170" cy="178" rx="62" ry="16" fill="#5fb3d6" stroke="#3b8fb5" stroke-width="2"/><ellipse cx="160" cy="175" rx="20" ry="4" fill="#bfe6f5"/><rect x="252" y="120" width="7" height="60" fill="#8a5d2a"/><path d="M255 122 q-30 -8 -38 8 M255 122 q30 -8 38 8 M255 122 q-18 -24 -34 -18 M255 122 q18 -24 34 -18" stroke="#3f8a3a" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="40" cy="35" r="16" fill="#ffcf57"/><g transform="translate(285,205)"><rect x="-30" y="-40" width="60" height="24" rx="12" fill="#7b4a26"/><path d="M22 -36 L40 -62 L50 -58 L36 -30Z" fill="#7b4a26"/><path d="M40 -62 L46 -70 L50 -60Z" fill="#5a3418"/><rect x="-26" y="-18" width="6" height="18" fill="#5a3418"/><rect x="-12" y="-18" width="6" height="18" fill="#5a3418"/><rect x="8" y="-18" width="6" height="18" fill="#5a3418"/><rect x="20" y="-18" width="6" height="18" fill="#5a3418"/><path d="M-30 -36 Q-44 -30 -40 -14" stroke="#5a3418" stroke-width="5" fill="none"/></g><g transform="translate(210,204) scale(1.3)"><path d="M-13 0 L-9 -46 L9 -46 L13 0Z" fill="#9b2c2c"/><path d="M-9 -40 L-20 -18 M9 -40 L20 -18" stroke="#9b2c2c" stroke-width="6" stroke-linecap="round"/><circle cx="0" cy="-55" r="10" fill="#e0ac7e"/><path d="M-11 -58 Q0 -72 11 -58Z" fill="#222"/></g><g transform="translate(125,204) scale(1.3)"><path d="M-13 0 L-9 -46 L9 -46 L13 0Z" fill="#8d8d8d"/><path d="M-9 -40 L-20 -18 M9 -40 L20 -18" stroke="#8d8d8d" stroke-width="6" stroke-linecap="round"/><circle cx="0" cy="-55" r="10" fill="#c98f5f"/><path d="M-11 -58 Q0 -72 11 -58Z" fill="#fff"/></g><rect x="53" y="202" width="44" height="5" rx="2" fill="#8a5d2a" transform="rotate(-6 75 208)"/><rect x="53" y="197" width="44" height="5" rx="2" fill="#8a5d2a" transform="rotate(-2 75 208)"/><rect x="53" y="192" width="44" height="5" rx="2" fill="#8a5d2a" transform="rotate(2 75 208)"/><rect x="53" y="187" width="44" height="5" rx="2" fill="#8a5d2a" transform="rotate(6 75 208)"/><rect x="165" y="84" width="70" height="28" rx="14" fill="#fff" stroke="#9b2c2c" stroke-width="2"/><text x="200" y="104" text-anchor="middle" font-size="15" font-weight="800" fill="#9b2c2c" font-family="Tajawal">أين مالي؟!</text><rect x="70" y="90" width="56" height="26" rx="13" fill="#fff" stroke="#555" stroke-width="2"/><text x="98" y="108" text-anchor="middle" font-size="14" font-weight="800" fill="#555" font-family="Tajawal">لم أرَه!</text><circle cx="296" cy="24" r="16" fill="#0f5c63"/><text x="296" y="30" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Tajawal">4</text></svg><figcaption>يعود الفارس ويتّهم الشيخ… والشيخ لا يعلم شيئاً</figcaption></figure>
+    </div>
     <div class="moses">
       <div class="m-col">
         <div class="m-head bad-h">👁️ ما رآه موسى (الظاهر)</div>
@@ -442,6 +548,43 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
       </div>
     </div>
     <div class="lesson-box" style="margin-top:14px">💡 <b>الدرس:</b> عندما نرى شيئاً لا نفهم حكمته، لا نتهم الله بالظلم؛ فالله محيط بكل شيء، ونحن ﴿يَعْلَمُونَ ظَاهِرًا مِّنَ الْحَيَاةِ الدُّنْيَا﴾. <br><small style="color:var(--muted)">* القصة كما يرويها الخطباء، وذُكرت في الفيديو.</small></div>
+  </div>
+</section>
+
+<!-- why -->
+<section id="why">
+  <div class="sec-head"><div class="ic">❓</div><h2>إذا كان الله عادلاً… فلماذا؟<small>لماذا يوجد فقير وغني؟ ولماذا يوجد مريض وسليم؟</small></h2></div>
+  <div class="grid2">
+    <div class="card why-c">
+      <h3>💰 لماذا يوجد فقير وغني؟</h3>
+      <ol>
+        <li><b>كلاهما في امتحان:</b> الغني يُمتحن بالشكر والإنفاق، والفقير يُمتحن بالصبر والرضا. ﴿وَنَبْلُوكُم بِالشَّرِّ وَالْخَيْرِ فِتْنَةً﴾ <small>(الأنبياء: 35)</small></li>
+        <li><b>ليحتاج الناس بعضهم إلى بعض:</b> لو كان الجميع أغنياء لما عمل أحد عند أحد. ﴿لِّيَتَّخِذَ بَعْضُهُم بَعْضًا سُخْرِيًّا﴾ <small>(الزخرف: 32)</small></li>
+        <li><b>الغنى ليس دليلاً على محبة الله:</b> قارون كان غنياً جداً وكان ظالماً، ومن الأنبياء والأولياء من عاش فقيراً.</li>
+        <li><b>كثير من الفقر سببه ظلم الناس لا الله:</b> الاحتكار، وأكل الحقوق، والحروب، وعدم إخراج الزكاة والخُمس.</li>
+      </ol>
+      <div class="ex-line"><b>مثال:</b> النبي سليمان عليه السلام أُعطي مُلكاً عظيماً فقال: ﴿هَٰذَا مِن فَضْلِ رَبِّي لِيَبْلُوَنِي أَأَشْكُرُ أَمْ أَكْفُرُ﴾ <small>(النمل: 40)</small></div>
+    </div>
+    <div class="card why-c">
+      <h3>🩺 لماذا يوجد مريض وسليم؟</h3>
+      <ol>
+        <li><b>المرض امتحان وأجر:</b> من صبر على المرض رفع الله درجته وكفّر عنه ذنوبه.</li>
+        <li><b>يعرّفنا قيمة النعمة:</b> لا يعرف الإنسان قيمة الصحة حتى يمرض، فيشكر الله عليها.</li>
+        <li><b>للكون قوانين:</b> الجراثيم والبرد والحوادث تجري حسب سنن ثابتة وضعها الله، ولا تفرّق بين أحد.</li>
+        <li><b>بعض المرض من أفعالنا:</b> التدخين، والأكل غير الصحي، والإهمال. فهذا ليس ظلماً من الله، بل نتيجة اختيارنا.</li>
+      </ol>
+      <div class="ex-line"><b>مثال:</b> النبي أيوب عليه السلام مرض سنوات طويلة وفقد ماله وأولاده، فصبر، فأثنى الله عليه: ﴿إِنَّا وَجَدْنَاهُ صَابِرًا ۚ نِّعْمَ الْعَبْدُ﴾ <small>(ص: 44)</small></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h3 style="margin-top:0;color:var(--teal)">تذكّر مثال الطبيب 💊</h3>
+    <p style="margin-top:0">الطبيب قد يمنع عن طفل الحلوى ويعطيه دواءً مُرّاً. الطفل يظنه قاسياً، لكن الطبيب يعلم ما لا يعلمه الطفل. وعلمنا بالنسبة لعلم الله <b>قطرة في محيط</b>؛ فما لا نفهم حكمته اليوم قد نفهمه غداً، أو يوم القيامة حين يُوفّى كل إنسان أجره كاملاً.</p>
+    <div class="duty">
+      <div><b>إن كنت غنياً</b><br>أشكر الله وأساعد المحتاج</div>
+      <div><b>إن كنت فقيراً</b><br>أصبر وأعمل ولا أحسد</div>
+      <div><b>إن كنت سليماً</b><br>أحافظ على صحتي وأزور المريض</div>
+      <div><b>إن كنت مريضاً</b><br>أصبر وأتعالج وأدعو الله</div>
+    </div>
   </div>
 </section>
 
@@ -520,6 +663,8 @@ const Q=[
  {q:"في مناظرة، الطالب الذي بينك وبينه خلاف قدّم أفضل حجة، وأنت في لجنة التحكيم.",o:["أعطيه درجة أقل، فهو لا يستحق الفوز","أعطيه ما يستحق، فالخلاف لا يبرّر الظلم","أمتنع عن التقييم"],a:1,e:"﴿وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا ۚ اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ﴾."},
  {q:"أمير المؤمنين عليه السلام كان الحاكم، ومع ذلك لم يأخذ درعه من النصراني بالقوة. ماذا يعلّمنا ذلك؟",o:["أن الحاكم فوق القانون","أن الجميع سواء أمام القضاء، حتى الحاكم","أن الدرع لم يكن مهماً"],a:1,e:"وقف الحاكم أمام القاضي كأي إنسان، فكان هذا العدل سبباً في إسلام الرجل."},
  {q:"زميلك يقول: «لماذا الله جعل فلاناً غنياً وأنا لا؟ هذا ليس عدلاً!» ما الرد الأنسب؟",o:["معك حق، الدنيا غير عادلة","الله عادل حكيم، وعلمنا قليل، والغني والفقير كلاهما في امتحان","لا تفكر في هذه الأسئلة"],a:1,e:"كما في مثال الطبيب: لا نعرف دائماً الحكمة، لكن الله عالم بكل شيء، ولا يظلم أحداً أبداً."},
+ {q:"في معركة، سيطر جيشك على بئر الماء الوحيد، وكان العدو قد منعكم منه سابقاً.",o:["نمنعهم كما منعونا، فهذا عدل","نسمح لهم بالشرب، فالعداوة لا تبرّر الظلم","نبيع لهم الماء بثمن غالٍ"],a:1,e:"هذا ما فعله أمير المؤمنين عليه السلام في صفّين: ترك الماء لأعدائه، لأن منع الماء عن الناس ظلم."},
+ {q:"صديقك مرض مرضاً طويلاً فقال: «لماذا أنا بالذات؟ الله ظلمني!» ما أفضل رد؟",o:["أوافقه، فالمرض ظلم","أذكّره أن الله لا يظلم، وأن للصبر أجراً عظيماً كالنبي أيوب، وأزوره وأساعده","أبتعد عنه حتى لا أمرض"],a:1,e:"المرض امتحان وأجر وتكفير للذنوب، والله ﴿وَمَا رَبُّكَ بِظَلَّامٍ لِّلْعَبِيدِ﴾. وواجبنا زيارة المريض ومساعدته."},
  {q:"أخطأ زميلك في حقك ثم جاء يعتذر بصدق.",o:["أرفض حتى أردّ له الخطأ نفسه","أقبل اعتذاره وأصفح عنه","أقبل أمامه وأتكلم عنه في غيابه"],a:1,e:"﴿فَاصْفَحِ الصَّفْحَ الْجَمِيلَ﴾ — والصفح هو العفو عن المذنب، كما صفح أمير المؤمنين عليه السلام وأعطى الدرع للرجل."}
 ];
 let qi=0,right=0,done=0;
