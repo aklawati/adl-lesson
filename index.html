@@ -45,6 +45,34 @@ section{padding:52px 0 8px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.case-top{display:flex;gap:12px;align-items:center;margin-bottom:6px}
+.case-ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:26px;flex:none}
+.case-tag{font-size:14px;color:var(--muted);font-weight:700}
+.case h3{margin:0;color:var(--teal);font-size:23px;line-height:1.3}
+.case p{margin:6px 0 12px;font-size:18px;line-height:1.8;flex:1}
+.case details{box-shadow:none;margin:0;border-color:var(--gold);background:var(--gold-soft)}
+.case summary{font-size:17px;padding:10px 14px}
+.case summary::after{font-size:20px}
+.case .ans{font-size:17px;background:#fff}
+.video-box{position:relative;padding-top:56.25%;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#000}
+.video-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vlist{margin:0;padding-inline-start:20px;display:grid;gap:8px;font-size:18px;line-height:1.8}
+.moses{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.m-col{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.m-head{padding:10px 16px;font-weight:800;font-size:19px}
+.bad-h{background:var(--red-soft);color:var(--red)}
+.good-h{background:var(--green-soft);color:var(--green)}
+.m-col ol{margin:12px 0;padding-inline-start:36px;padding-inline-end:14px;font-size:18px;line-height:1.8}
+.m-q{margin:0 16px 14px;font-weight:700;color:var(--teal)}
+.qopts{display:grid;gap:10px}
+.opt{font-family:inherit;font-size:19px;text-align:right;display:flex;gap:12px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 16px;cursor:pointer;color:var(--ink);line-height:1.6}
+.opt span{flex:none;width:34px;height:34px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;font-weight:800}
+.opt:hover:not(:disabled){border-color:var(--teal)}
+.opt.right{border-color:var(--green);background:var(--green-soft)}
+.opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.opt:disabled{cursor:default}
 .center{text-align:center}
 
 .quran{font-family:"Amiri",serif;font-size:30px;line-height:2.1;color:#1d4d2b;background:var(--green-soft);border-right:6px solid var(--green);border-radius:14px;padding:16px 22px;margin:16px 0}
@@ -152,6 +180,7 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
   .hero-grid,.grid2,.story,.quiz-wrap,.vs{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr}
   .grid4{grid-template-columns:1fr 1fr}
+  .cases,.moses{grid-template-columns:1fr}
   .hero h1{font-size:46px}
   .story-img{position:static;max-width:300px;margin:0 auto}
   .quran{font-size:24px}
@@ -168,8 +197,9 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
   <a href="#meaning">ما هو العدل؟</a>
   <a href="#quran">العدل في القرآن</a>
   <a href="#story">قصة الدرع</a>
-  <a href="#examples">أمثلة من حياتنا</a>
-  <a href="#quiz">عادل أم ظالم؟</a>
+  <a href="#examples">مواقف حقيقية</a>
+  <a href="#video">العدل الإلهي</a>
+  <a href="#quiz">تحدّي العدل</a>
   <a href="#discuss">أحاور وأناقش</a>
   <a href="#summary">أقول وأفعل</a>
 </div></nav>
@@ -256,50 +286,17 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
     <h3 style="margin-top:0;color:var(--teal)">هل العدل يعني أن نعطي الجميع الشيء نفسه دائماً؟ <span class="out-tag">مثال من خارج الكتاب</span></h3>
     <div class="grid2">
       <figure>
-        <svg viewBox="0 0 400 260" role="img" aria-label="مساواة">
-          <rect width="400" height="260" fill="#dff1f5"/><circle cx="330" cy="50" r="26" fill="#ffd66b"/>
-          <rect y="215" width="400" height="45" fill="#8cc084"/>
-          <!-- field behind -->
-          <rect x="0" y="120" width="400" height="12" fill="#6b4f2c"/>
-          <!-- boxes equal -->
-          <rect x="45" y="190" width="70" height="30" fill="#b07b3e" stroke="#7a5226"/>
-          <rect x="165" y="190" width="70" height="30" fill="#b07b3e" stroke="#7a5226"/>
-          <rect x="285" y="190" width="70" height="30" fill="#b07b3e" stroke="#7a5226"/>
-          <!-- tall kid -->
-          <circle cx="80" cy="95" r="16" fill="#e0ac7e"/><rect x="66" y="111" width="28" height="80" rx="10" fill="#3c7dd9"/>
-          <!-- mid kid -->
-          <circle cx="200" cy="120" r="15" fill="#c98f5f"/><rect x="187" y="135" width="26" height="56" rx="10" fill="#e5533d"/>
-          <!-- short kid -->
-          <circle cx="320" cy="148" r="14" fill="#e8b98f"/><rect x="308" y="162" width="24" height="29" rx="9" fill="#2f9e58"/>
-          <!-- fence -->
-          <g fill="#a8773c"><rect x="0" y="132" width="400" height="10"/></g>
-          <g fill="#c48c49" stroke="#8a5d2a"><rect x="20" y="125" width="360" height="45"/></g>
-          <text x="200" y="152" font-size="16" text-anchor="middle" fill="#fff" font-family="Tajawal" font-weight="700">سور الملعب</text>
-          <text x="320" y="122" font-size="22" text-anchor="middle">😢</text>
-        </svg>
-        <figcaption><b>مساواة فقط:</b> أعطينا كل طفل صندوقاً واحداً… لكن الصغير لا يرى المباراة!</figcaption>
+        <svg viewBox="0 0 480 340" role="img" aria-label="المساواة: كل واحد صندوق واحد"><rect width="480" height="340" fill="#dff1f7"/><rect x="0" y="110" width="480" height="80" fill="#4caf6a"/><line x1="240" y1="110" x2="240" y2="190" stroke="#fff" stroke-width="2"/><rect x="420" y="128" width="40" height="40" fill="none" stroke="#fff" stroke-width="3"/><circle cx="300" cy="150" r="7" fill="#fff" stroke="#333"/><circle cx="200" cy="135" r="6" fill="#e63946"/><rect x="195" y="141" width="10" height="16" fill="#e63946"/><circle cx="340" cy="138" r="6" fill="#1d4ed8"/><rect x="335" y="144" width="10" height="16" fill="#1d4ed8"/><rect x="0" y="0" width="480" height="44" fill="#9b2c2c"/><text x="240" y="30" text-anchor="middle" font-size="21" font-weight="800" fill="#fff" font-family="Tajawal">المساواة: كل واحد صندوق واحد</text><rect x="0" y="175" width="480" height="125" fill="#c9955a"/><line x1="0" y1="175" x2="0" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="32" y1="175" x2="32" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="64" y1="175" x2="64" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="96" y1="175" x2="96" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="128" y1="175" x2="128" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="160" y1="175" x2="160" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="192" y1="175" x2="192" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="224" y1="175" x2="224" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="256" y1="175" x2="256" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="288" y1="175" x2="288" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="320" y1="175" x2="320" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="352" y1="175" x2="352" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="384" y1="175" x2="384" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="416" y1="175" x2="416" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="448" y1="175" x2="448" y2="300" stroke="#8a5d2a" stroke-width="2"/><rect x="0" y="171" width="480" height="8" fill="#6e4a22"/><text x="470" y="200" text-anchor="end" font-size="14" font-weight="700" fill="#5a3a16" font-family="Tajawal">السور</text><rect x="0" y="300" width="480" height="40" fill="#e9e2d0"/><rect x="48" y="270" width="84" height="30" fill="#b9854a" stroke="#6e4a22" stroke-width="2"/><line x1="48" y1="285" x2="132" y2="285" stroke="#8a5d2a"/><rect x="79" y="209.2" width="9" height="60.8" rx="4" fill="#2b3a55"/><rect x="92" y="209.2" width="9" height="60.8" rx="4" fill="#2b3a55"/><rect x="73" y="144" width="34" height="67.2" rx="10" fill="#2563eb"/><circle cx="90" cy="127" r="17" fill="#e0ac7e"/><path d="M73 124 Q90 101 107 124" fill="#2a1d14"/><rect x="50" y="66" width="80" height="28" rx="14" fill="#fff" stroke="#2f7d4a" stroke-width="2.5"/><text x="90" y="86" text-anchor="middle" font-size="16" font-weight="800" fill="#2f7d4a" font-family="Tajawal">✔ أرى</text><text x="90" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2a2e" font-family="Tajawal">الطويل · صندوق واحد</text><rect x="198" y="270" width="84" height="30" fill="#b9854a" stroke="#6e4a22" stroke-width="2"/><line x1="198" y1="285" x2="282" y2="285" stroke="#8a5d2a"/><rect x="229" y="222.5" width="9" height="47.5" rx="4" fill="#2b3a55"/><rect x="242" y="222.5" width="9" height="47.5" rx="4" fill="#2b3a55"/><rect x="223" y="179" width="34" height="45.5" rx="10" fill="#e11d48"/><circle cx="240" cy="162" r="17" fill="#c98f5f"/><path d="M223 159 Q240 136 257 159" fill="#2a1d14"/><rect x="200" y="101" width="80" height="28" rx="14" fill="#fff" stroke="#2f7d4a" stroke-width="2.5"/><text x="240" y="121" text-anchor="middle" font-size="16" font-weight="800" fill="#2f7d4a" font-family="Tajawal">✔ أرى</text><text x="240" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2a2e" font-family="Tajawal">المتوسط · صندوق واحد</text><rect x="348" y="270" width="84" height="30" fill="#b9854a" stroke="#6e4a22" stroke-width="2"/><line x1="348" y1="285" x2="432" y2="285" stroke="#8a5d2a"/><rect x="379" y="235.04" width="9" height="34.96" rx="4" fill="#2b3a55"/><rect x="392" y="235.04" width="9" height="34.96" rx="4" fill="#2b3a55"/><rect x="373" y="212" width="34" height="25.04" rx="10" fill="#16a34a"/><circle cx="390" cy="195" r="17" fill="#e8b98f"/><path d="M373 192 Q390 169 407 192" fill="#2a1d14"/><rect x="350" y="134" width="80" height="28" rx="14" fill="#fff" stroke="#b42318" stroke-width="2.5"/><text x="390" y="154" text-anchor="middle" font-size="16" font-weight="800" fill="#b42318" font-family="Tajawal">✘ لا أرى</text><text x="390" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2a2e" font-family="Tajawal">القصير · صندوق واحد</text></svg>
+        <figcaption style="font-size:17px"><b style="color:var(--red)">المساواة وحدها:</b> الجميع أخذ الشيء نفسه، لكن القصير ما زال لا يرى المباراة، والطويل أخذ صندوقاً لا يحتاجه.</figcaption>
       </figure>
       <figure>
-        <svg viewBox="0 0 400 260" role="img" aria-label="عدل">
-          <rect width="400" height="260" fill="#dff1f5"/><circle cx="330" cy="50" r="26" fill="#ffd66b"/>
-          <rect y="215" width="400" height="45" fill="#8cc084"/>
-          <!-- tall kid no box -->
-          <circle cx="80" cy="125" r="16" fill="#e0ac7e"/><rect x="66" y="141" width="28" height="80" rx="10" fill="#3c7dd9"/>
-          <!-- mid kid one box -->
-          <rect x="165" y="190" width="70" height="30" fill="#b07b3e" stroke="#7a5226"/>
-          <circle cx="200" cy="120" r="15" fill="#c98f5f"/><rect x="187" y="135" width="26" height="56" rx="10" fill="#e5533d"/>
-          <!-- short kid two boxes -->
-          <rect x="285" y="190" width="70" height="30" fill="#b07b3e" stroke="#7a5226"/>
-          <rect x="285" y="160" width="70" height="30" fill="#b07b3e" stroke="#7a5226"/>
-          <circle cx="320" cy="118" r="14" fill="#e8b98f"/><rect x="308" y="132" width="24" height="29" rx="9" fill="#2f9e58"/>
-          <g fill="#c48c49" stroke="#8a5d2a"><rect x="20" y="140" width="360" height="45" opacity=".85"/></g>
-          <text x="200" y="168" font-size="16" text-anchor="middle" fill="#fff" font-family="Tajawal" font-weight="700">سور الملعب</text>
-          <text x="80" y="95" font-size="22" text-anchor="middle">😊</text><text x="200" y="92" font-size="22" text-anchor="middle">😊</text><text x="320" y="92" font-size="22" text-anchor="middle">😄</text>
-        </svg>
-        <figcaption><b>عدل:</b> أعطينا كل طفل ما يحتاجه… فشاهد الجميع المباراة!</figcaption>
+        <svg viewBox="0 0 480 340" role="img" aria-label="العدل: كلٌّ حسب حاجته"><rect width="480" height="340" fill="#dff1f7"/><rect x="0" y="110" width="480" height="80" fill="#4caf6a"/><line x1="240" y1="110" x2="240" y2="190" stroke="#fff" stroke-width="2"/><rect x="420" y="128" width="40" height="40" fill="none" stroke="#fff" stroke-width="3"/><circle cx="300" cy="150" r="7" fill="#fff" stroke="#333"/><circle cx="200" cy="135" r="6" fill="#e63946"/><rect x="195" y="141" width="10" height="16" fill="#e63946"/><circle cx="340" cy="138" r="6" fill="#1d4ed8"/><rect x="335" y="144" width="10" height="16" fill="#1d4ed8"/><rect x="0" y="0" width="480" height="44" fill="#2f7d4a"/><text x="240" y="30" text-anchor="middle" font-size="21" font-weight="800" fill="#fff" font-family="Tajawal">العدل: كلٌّ حسب حاجته</text><rect x="0" y="175" width="480" height="125" fill="#c9955a"/><line x1="0" y1="175" x2="0" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="32" y1="175" x2="32" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="64" y1="175" x2="64" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="96" y1="175" x2="96" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="128" y1="175" x2="128" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="160" y1="175" x2="160" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="192" y1="175" x2="192" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="224" y1="175" x2="224" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="256" y1="175" x2="256" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="288" y1="175" x2="288" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="320" y1="175" x2="320" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="352" y1="175" x2="352" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="384" y1="175" x2="384" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="416" y1="175" x2="416" y2="300" stroke="#8a5d2a" stroke-width="2"/><line x1="448" y1="175" x2="448" y2="300" stroke="#8a5d2a" stroke-width="2"/><rect x="0" y="171" width="480" height="8" fill="#6e4a22"/><text x="470" y="200" text-anchor="end" font-size="14" font-weight="700" fill="#5a3a16" font-family="Tajawal">السور</text><rect x="0" y="300" width="480" height="40" fill="#e9e2d0"/><rect x="79" y="239.2" width="9" height="60.8" rx="4" fill="#2b3a55"/><rect x="92" y="239.2" width="9" height="60.8" rx="4" fill="#2b3a55"/><rect x="73" y="174" width="34" height="67.2" rx="10" fill="#2563eb"/><circle cx="90" cy="157" r="17" fill="#e0ac7e"/><path d="M73 154 Q90 131 107 154" fill="#2a1d14"/><rect x="50" y="96" width="80" height="28" rx="14" fill="#fff" stroke="#2f7d4a" stroke-width="2.5"/><text x="90" y="116" text-anchor="middle" font-size="16" font-weight="800" fill="#2f7d4a" font-family="Tajawal">✔ أرى</text><text x="90" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2a2e" font-family="Tajawal">الطويل · بلا صندوق</text><rect x="198" y="270" width="84" height="30" fill="#b9854a" stroke="#6e4a22" stroke-width="2"/><line x1="198" y1="285" x2="282" y2="285" stroke="#8a5d2a"/><rect x="229" y="222.5" width="9" height="47.5" rx="4" fill="#2b3a55"/><rect x="242" y="222.5" width="9" height="47.5" rx="4" fill="#2b3a55"/><rect x="223" y="179" width="34" height="45.5" rx="10" fill="#e11d48"/><circle cx="240" cy="162" r="17" fill="#c98f5f"/><path d="M223 159 Q240 136 257 159" fill="#2a1d14"/><rect x="200" y="101" width="80" height="28" rx="14" fill="#fff" stroke="#2f7d4a" stroke-width="2.5"/><text x="240" y="121" text-anchor="middle" font-size="16" font-weight="800" fill="#2f7d4a" font-family="Tajawal">✔ أرى</text><text x="240" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2a2e" font-family="Tajawal">المتوسط · صندوق واحد</text><rect x="348" y="270" width="84" height="30" fill="#b9854a" stroke="#6e4a22" stroke-width="2"/><line x1="348" y1="285" x2="432" y2="285" stroke="#8a5d2a"/><rect x="348" y="240" width="84" height="30" fill="#b9854a" stroke="#6e4a22" stroke-width="2"/><line x1="348" y1="255" x2="432" y2="255" stroke="#8a5d2a"/><rect x="379" y="205.04" width="9" height="34.96" rx="4" fill="#2b3a55"/><rect x="392" y="205.04" width="9" height="34.96" rx="4" fill="#2b3a55"/><rect x="373" y="182" width="34" height="25.04" rx="10" fill="#16a34a"/><circle cx="390" cy="165" r="17" fill="#e8b98f"/><path d="M373 162 Q390 139 407 162" fill="#2a1d14"/><rect x="350" y="104" width="80" height="28" rx="14" fill="#fff" stroke="#2f7d4a" stroke-width="2.5"/><text x="390" y="124" text-anchor="middle" font-size="16" font-weight="800" fill="#2f7d4a" font-family="Tajawal">✔ أرى</text><text x="390" y="325" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2a2e" font-family="Tajawal">القصير · صندوقان</text></svg>
+        <figcaption style="font-size:17px"><b style="color:var(--green)">العدل:</b> وزّعنا الصناديق نفسها (3 صناديق) حسب حاجة كل واحد، فرأى الجميع المباراة.</figcaption>
       </figure>
     </div>
-    <div class="lesson-box">💡 <b>الفكرة:</b> العدل يراعي الطاقات ويأخذ الفوارق بالاعتبار — كما في الكتاب: «يرمي إلى المساواة بين الناس، التي تراعي الطاقات، وتأخذ بالاعتبار الفوارق فيما بينهم».</div>
+    <div class="lesson-box">💡 <b>الفكرة:</b> العدل يراعي الطاقات ويأخذ الفوارق بالاعتبار — كما في الكتاب: «يرمي إلى المساواة بين الناس، التي تراعي الطاقات، وتأخذ بالاعتبار الفوارق فيما بينهم».<br>
+    <b>انتبه:</b> أحياناً يكون العدل هو المساواة التامة (نفس الإجابة = نفس الدرجة)، وأحياناً يكون بمراعاة الحاجة (وقت إضافي لطالب يحتاجه). المهم: <b>أن يأخذ كلُّ ذي حقٍّ حقَّه</b>.</div>
+    <p style="margin-bottom:0"><b>🗣️ ناقش:</b> هل كان من الظلم أن الطويل لم يأخذ صندوقاً في الصورة الثانية؟ لماذا؟</p>
   </div>
 
   <div class="grid2" style="margin-top:22px">
@@ -368,48 +365,96 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
 
 <!-- examples -->
 <section id="examples">
-  <div class="sec-head"><div class="ic">🌍</div><h2>العدل في حياتنا اليومية<small>أمثلة من خارج الكتاب — كيف أكون عادلاً؟</small></h2></div>
-  <div class="grid3">
-    <div class="ex">
-      <svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#fdf1dd"/><rect x="40" y="110" width="220" height="14" rx="4" fill="#a8773c"/><circle cx="150" cy="95" r="42" fill="#f4c16a" stroke="#c9962b" stroke-width="4"/><g stroke="#8a5d2a" stroke-width="3"><line x1="150" y1="53" x2="150" y2="137"/><line x1="108" y1="95" x2="192" y2="95"/></g><circle cx="130" cy="78" r="5" fill="#d64545"/><circle cx="170" cy="112" r="5" fill="#d64545"/><circle cx="168" cy="76" r="5" fill="#d64545"/><circle cx="128" cy="112" r="5" fill="#d64545"/><text x="45" y="60" font-size="34">👦</text><text x="220" y="60" font-size="34">👧</text><text x="45" y="160" font-size="34">🧒</text><text x="222" y="160" font-size="34">👶</text></svg>
-      <div class="body"><h3>في البيت 🏠</h3><p>عندك كعكة وأربعة إخوة. العدل أن تقسمها بالتساوي، ولا تأخذ القطعة الأكبر لنفسك.</p><div class="q">❓ وإذا كان أخوك الصغير مريضاً ويحتاج اهتماماً أكثر؟</div></div>
+  <div class="sec-head"><div class="ic">🌍</div><h2>العدل في مواقف حقيقية<small>مواقف من خارج الكتاب — فكّر أولاً، ثم اضغط لترى الموقف العادل</small></h2></div>
+  <div class="cases">
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#fde8e8">🏢</span><div><div class="case-tag">في المجتمع</div><h3>الواسطة</h3></div></div>
+      <p>ينتظر عشرة أشخاص دورهم في مكتب حكومي، فيدخل قريب الموظف ويُنجز معاملته أولاً لأنه «من الأهل».</p>
+      <details><summary>ما الموقف العادل؟</summary><div class="ans">هذا ظلم لمن سبقه في الدور. العدل ألا يُفرَّق بين الناس بسبب «نسب أو مال أو جاه». وتذكّر حديث الرسول ﷺ: «إنما أهلك الذين من قبلكم أنهم كانوا إذا سرق فيهم الشريف تركوه…».</div></details>
     </div>
-    <div class="ex">
-      <svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#bfe3b4"/><rect x="10" y="10" width="280" height="150" fill="none" stroke="#fff" stroke-width="3"/><line x1="150" y1="10" x2="150" y2="160" stroke="#fff" stroke-width="3"/><circle cx="150" cy="85" r="28" fill="none" stroke="#fff" stroke-width="3"/><text x="130" y="100" font-size="40">🧑‍⚖️</text><rect x="190" y="40" width="22" height="30" rx="3" fill="#f2c200" transform="rotate(12 200 55)"/><text x="60" y="130" font-size="30">⚽</text></svg>
-      <div class="body"><h3>في الملعب ⚽</h3><p>الحَكَم العادل يعطي البطاقة لمن يخطئ، حتى لو كان من الفريق الذي يحبه أو فريق صديقه.</p><div class="q">❓ لو كنت حكماً وأخطأ أخوك، ماذا تفعل؟</div></div>
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#e3f0ef">📊</span><div><div class="case-tag">في المدرسة</div><h3>المشروع الجماعي</h3></div></div>
+      <p>عملتم أربعة في مشروع، وزميل واحد لم يساعد بشيء. يسألكم المعلم: «هل شارك الجميع بالتساوي؟» والزميل صديقك.</p>
+      <details><summary>ما الموقف العادل؟</summary><div class="ans">أن تقول الحق بأدب ودون تشهير، لأن إعطاءه الدرجة نفسها ظلم لمن تعب. ﴿كُونُوا قَوَّامِينَ بِالْقِسْطِ شُهَدَاءَ لِلَّهِ وَلَوْ عَلَىٰ أَنفُسِكُمْ﴾. ويمكنك أن تنصحه قبلها ليشارك.</div></details>
     </div>
-    <div class="ex">
-      <svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#e6eefc"/><rect x="60" y="18" width="180" height="70" rx="6" fill="#2d5b3f" stroke="#6b4f2c" stroke-width="6"/><text x="150" y="62" font-size="20" fill="#fff" text-anchor="middle" font-family="Tajawal" font-weight="700">العدل أساس الملك</text><text x="40" y="150" font-size="36">🙋‍♂️</text><text x="130" y="150" font-size="36">🙋</text><text x="220" y="150" font-size="36">🙋‍♀️</text></svg>
-      <div class="body"><h3>في الصف 🏫</h3><p>عندما يختار قائد المجموعة من يتكلم أو يشارك، يعطي الفرصة للجميع بالتناوب، لا لأصدقائه فقط.</p><div class="q">❓ هل من العدل أن يتكلم الطالب نفسه في كل مرة؟</div></div>
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#fbf1dc">📱</span><div><div class="case-tag">في الإنترنت</div><h3>رسالة في «المجموعة»</h3></div></div>
+      <p>وصلتك في مجموعة الصف رسالة تتهم طالباً بالغش، دون أي دليل، والجميع يعيد إرسالها.</p>
+      <details><summary>ما الموقف العادل؟</summary><div class="ans">العدل في الكلام أيضاً: ﴿وَإِذَا قُلْتُمْ فَاعْدِلُوا﴾. لا تنشر اتهاماً بلا بيّنة؛ فالقاضي شريح لم يحكم حتى لأمير المؤمنين بلا بيّنة! تثبّت أولاً، ولا تظلم أحداً بكلمة.</div></details>
     </div>
-    <div class="ex">
-      <svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#fbe7e3"/><text x="40" y="110" font-size="60">🙎‍♂️</text><text x="190" y="110" font-size="60">🙎</text><text x="128" y="90" font-size="40">💬</text><text x="118" y="150" font-size="18" font-family="Tajawal" font-weight="700" fill="#9b2c2c">قول الحق</text></svg>
-      <div class="body"><h3>في الشهادة 🗣️</h3><p>رأيت صديقك يكسر زجاج النافذة، واتُّهم طالبٌ آخر بريء. العدل أن تقول الحق ولا تكتم الشهادة.</p><div class="q">❓ ﴿وَلَوْ عَلَىٰ أَنفُسِكُمْ أَوِ الْوَالِدَيْنِ وَالْأَقْرَبِينَ﴾ — ماذا تعني لك؟</div></div>
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#e4f3e8">🧰</span><div><div class="case-tag">في البيت</div><h3>حق العامل</h3></div></div>
+      <p>عامل أنهى صيانة المنزل، ويقول له أحد أفراد الأسرة: «تعال الشهر القادم نعطيك أجرتك» مع أن المال موجود.</p>
+      <details><summary>ما الموقف العادل؟</summary><div class="ans">تأخير حقه بلا عذر ظلم. قال رسول الله ﷺ: «أعطوا الأجيرَ أجرَه قبل أن يجفّ عرقُه». والعدل واجب مع كل الناس، مهما كانت جنسيتهم أو دينهم.</div></details>
     </div>
-    <div class="ex">
-      <svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#e9f5ef"/><text x="50" y="110" font-size="56">😤</text><text x="190" y="110" font-size="56">🤝</text><path d="M120 85 L175 85" stroke="#2f7d4a" stroke-width="5" marker-end="url(#ar)"/><defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8z" fill="#2f7d4a"/></marker></defs></svg>
-      <div class="body"><h3>مع من أختلف معه 🤝</h3><p>زميل تخاصمت معه أجاب إجابة صحيحة. العدل أن تقول: «إجابته صحيحة» ولا تظلمه بسبب الخلاف.</p><div class="q">❓ هل العداوة تبرّر الظلم؟ (المائدة: 8)</div></div>
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#f3eaf6">⚖️</span><div><div class="case-tag">مع الأقربين</div><h3>الشهادة على الأخ</h3></div></div>
+      <p>كسر أخوك الأكبر هاتف الوالد ثم قال إن الأخ الصغير هو من فعلها. أبوك يسألك: «هل رأيت ما حدث؟»</p>
+      <details><summary>ما الموقف العادل؟</summary><div class="ans">أن تشهد بالحق ولا تكتم الشهادة: ﴿وَلَا تَكْتُمُوا الشَّهَادَةَ﴾، حتى لو كان المخطئ أخاك، ﴿أَوِ الْوَالِدَيْنِ وَالْأَقْرَبِينَ﴾. وتستطيع أن تطلب من أبيك أن يرفق به.</div></details>
     </div>
-    <div class="ex">
-      <svg viewBox="0 0 300 170"><rect width="300" height="170" fill="#fff6e0"/><text x="30" y="115" font-size="56">🧑‍💼</text><text x="120" y="115" font-size="56">👷</text><text x="210" y="115" font-size="56">👴</text><rect x="20" y="130" width="260" height="10" rx="5" fill="#c9962b"/></svg>
-      <div class="body"><h3>في المجتمع 🏙️</h3><p>في الطابور أو المستشفى، الجميع ينتظر دوره: الغني والفقير، الكبير والصغير، المواطن والوافد.</p><div class="q">❓ لماذا لا يحق لشخص أن يتجاوز الدور لأنه غني أو مشهور؟</div></div>
+    <div class="case">
+      <div class="case-top"><span class="case-ic" style="background:#e6eefc">🤝</span><div><div class="case-tag">مع المخالف</div><h3>الخصم على حق</h3></div></div>
+      <p>في مناظرة صفية، طالب بينك وبينه خلاف قدّم أقوى حجة، وأنت عضو في لجنة التحكيم.</p>
+      <details><summary>ما الموقف العادل؟</summary><div class="ans">أن تعطيه الدرجة التي يستحقها. ﴿وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا ۚ اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ﴾ — الخلاف لا يبرّر الظلم.</div></details>
     </div>
+  </div>
+</section>
+
+<!-- video -->
+<section id="video">
+  <div class="sec-head"><div class="ic">🎬</div><h2>العدل الإلهي: لماذا يختلف حال الناس؟<small>من فيديو «أصول الدين (3): العدل»</small></h2></div>
+  <div class="grid2" style="align-items:start">
+    <div class="video-box"><iframe src="https://www.youtube.com/embed/X0YnjES8qsA" title="أصول الدين (3) العدل" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <div class="card">
+      <h3 style="margin-top:0;color:var(--teal)">أهم الأفكار</h3>
+      <ul class="vlist">
+        <li><b>الله عادل لا يظلم أحداً أبداً</b>، وكل ما يفعله — إذا خلق أو رزق أو أعطى أو منع — فهو عين العدل والحكمة.</li>
+        <li><b>مثال الطبيب 🩺:</b> في الصيدلية آلاف الأدوية، والطبيب يكتب لك دواءً معيناً. أنت لا تعرف لماذا هذا بالذات، لكنك تثق بعلمه. فكيف بالله الذي علمه لا حدود له؟</li>
+        <li><b>علمنا قليل:</b> علمنا بالنسبة لعلم الله مثل <b>قطرة في محيط</b>.</li>
+        <li><b>الغني والفقير كلاهما في امتحان:</b> لا نغضب ونقول «لماذا أعطاه ولم يعطني؟» فكلٌّ مُمتحَن فيما أُعطي.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:22px">
+    <h3 style="margin-top:0;color:var(--teal)">قصة النبي موسى عليه السلام عند عين الماء <span class="out-tag">من الفيديو</span></h3>
+    <p style="margin-top:0">طلب موسى عليه السلام أن يرى كيف يعدل الله بين عباده، فوقف على جبل يطلّ على عين ماء وشاهد ما يلي:</p>
+    <div class="moses">
+      <div class="m-col">
+        <div class="m-head bad-h">👁️ ما رآه موسى (الظاهر)</div>
+        <ol>
+          <li>فارس شاب يشرب من العين، ثم يرحل <b>وينسى كيس ذهبه</b>.</li>
+          <li>راعي غنم صغير يأتي، <b>يأخذ الكيس</b> ويذهب.</li>
+          <li>شيخ فقير يحمل الحطب يجلس ليستريح.</li>
+          <li>يعود الفارس، ويتهم الشيخ بأخذ ماله، <b>فيقتله</b>!</li>
+        </ol>
+        <p class="m-q">يبدو كل شيء ظلماً… فأين العدل؟ 🤔</p>
+      </div>
+      <div class="m-col">
+        <div class="m-head good-h">✨ ما أخبره الله به (الحقيقة)</div>
+        <ol>
+          <li>والد الفارس كان قد أخذ من والد الراعي <b>مالاً بقدر ما في الكيس تماماً</b> ولم يردّه.</li>
+          <li>فرجع المال إلى <b>صاحبه الحقيقي</b> عن طريق الراعي.</li>
+          <li>أما الشيخ فكان قد <b>قتل والد الفارس</b> قبل سنوات ولم يُقتصّ منه.</li>
+          <li>فأجرى الله العدل: عاد الحق لأهله، وأُخذ القصاص من القاتل.</li>
+        </ol>
+        <p class="m-q">نحن نرى الظاهر، والله يعلم الحقيقة كلها.</p>
+      </div>
+    </div>
+    <div class="lesson-box" style="margin-top:14px">💡 <b>الدرس:</b> عندما نرى شيئاً لا نفهم حكمته، لا نتهم الله بالظلم؛ فالله محيط بكل شيء، ونحن ﴿يَعْلَمُونَ ظَاهِرًا مِّنَ الْحَيَاةِ الدُّنْيَا﴾. <br><small style="color:var(--muted)">* القصة كما يرويها الخطباء، وذُكرت في الفيديو.</small></div>
   </div>
 </section>
 
 <!-- quiz -->
 <section id="quiz">
-  <div class="sec-head"><div class="ic">🎮</div><h2>لعبة: عادل أم ظالم؟<small>اقرأ الموقف واختر — وشاهد الميزان!</small></h2></div>
+  <div class="sec-head"><div class="ic">🎯</div><h2>تحدّي العدل<small>اختر التصرف الأعدل في كل موقف — وراقب الميزان</small></h2></div>
   <div class="quiz-wrap">
     <div class="qcard">
       <div class="qnum" id="qnum"></div>
       <div class="qtext" id="qtext"></div>
-      <div class="qbtns" id="qbtns">
-        <button class="qb-just" data-a="1">✔ عادل</button>
-        <button class="qb-unjust" data-a="0">✘ ظالم</button>
-      </div>
+      <div class="qopts" id="qopts"></div>
       <div class="feedback" id="fb"></div>
-      <div style="margin-top:14px;display:none" id="nextWrap"><button class="btn" id="nextQ">السؤال التالي ←</button></div>
+      <div style="margin-top:14px;display:none" id="nextWrap"><button class="btn" id="nextQ">الموقف التالي ←</button></div>
     </div>
     <div class="card center">
       <svg viewBox="0 0 280 230" width="100%">
@@ -429,7 +474,6 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
     </div>
   </div>
 </section>
-
 <!-- discuss -->
 <section id="discuss">
   <div class="sec-head"><div class="ic">💬</div><h2>أحاور وأناقش<small>ناقش مع مجموعتك ثم اضغط لترى الإجابة</small></h2></div>
@@ -461,39 +505,40 @@ footer{text-align:center;color:var(--muted);padding:40px 0 50px;font-size:16px}
 <footer>درس «لماذا العدل؟» — التربية الإسلامية · الصف السادس</footer>
 
 <script>
-// flip cards
 document.querySelectorAll('.flip').forEach(f=>f.addEventListener('click',()=>f.classList.toggle('on')));
-
-// story
 const steps=[...document.querySelectorAll('#steps .step')];let si=0;
 const nb=document.getElementById('nextStep');
 nb.onclick=()=>{if(si<steps.length-1){si++;steps[si].classList.add('show');steps[si].scrollIntoView({behavior:'smooth',block:'nearest'});}
   if(si===steps.length-1)nb.textContent='انتهت القصة ✔';};
 document.getElementById('resetStory').onclick=()=>{si=0;steps.forEach((s,i)=>s.classList.toggle('show',i===0));nb.textContent='التالي ←';};
 
-// quiz
 const Q=[
- ["قسّمت الحلوى على إخوتي بالتساوي، وأخذت نصيبي مثلهم.",1,"أحسنت! أعطيت كل ذي حق حقه."],
- ["اختار قائد الفريق أصدقاءه فقط للعب، وترك الباقين رغم أنهم ماهرون.",0,"هذا ظلم، لأنه فرّق بين الناس بسبب الصداقة لا بسبب الحق."],
- ["رأت مريم زميلتها تُتّهم بشيء لم تفعله، فقالت الحقيقة للمعلمة.",1,"صحيح! قالت الحق ولم تكتم الشهادة."],
- ["أخذ خالد دور غيره في طابور المقصف لأنه أكبر منهم سناً.",0,"ظلم! لا فرق بين صغير وكبير في الحقوق."],
- ["أخطأ ابنه في المباراة، فأعطاه الحكم البطاقة الصفراء مثل غيره.",1,"عادل! قال الحق ولو على الأقربين."],
- ["لم يعطِ أحمد زميله الذي تخاصم معه درجته الكاملة في المسابقة رغم أنه فاز.",0,"ظلم! العداوة لا تبرّر الظلم ﴿اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ﴾."],
- ["ساعد المعلم الطالب الذي يجد صعوبة في القراءة بوقت إضافي.",1,"عادل! العدل يراعي الطاقات ويأخذ الفوارق بالاعتبار."],
- ["سامح علي صديقه الذي أخطأ في حقه واعتذر.",1,"رائع! هذا هو الصَّفح الجميل."]
+ {q:"أنت قائد فريق الصف في مسابقة، وعليك اختيار 5 لاعبين من 12. صديقك المقرّب مستواه ضعيف، وهناك زميل لا تعرفه جيداً لكنه ماهر.",o:["أختار صديقي، فالصداقة أهم","أختار الأمهر، وأشرح لصديقي السبب بلطف","أنسحب من القيادة لأتجنب الإحراج"],a:1,e:"الاختيار حسب الكفاءة هو العدل، وليس حسب القرابة أو الصداقة. ويمكن أن تحفظ مشاعر صديقك بالكلمة الطيبة."},
+ {q:"معلم يعطي طالباً عنده صعوبة في القراءة وقتاً إضافياً في الاختبار. زميل يقول: «هذا ظلم لنا!»",o:["الزميل محق، يجب أن يتساوى الجميع في كل شيء","ليس ظلماً، فالعدل يراعي الفوارق والحاجات","يجب إعطاء الجميع وقتاً إضافياً"],a:1,e:"تذكّر مثال السور: العدل «يراعي الطاقات ويأخذ بالاعتبار الفوارق». المساواة التامة ليست دائماً هي العدل."},
+ {q:"أخوك الأكبر أخطأ، واتُّهم أخوك الصغير بدلاً منه. والدك يسألك عمّا رأيت.",o:["أسكت، فلا أريد مشكلة مع أخي الأكبر","أقول الحقيقة، ولو كان المخطئ أخي","أقول إنني لا أعرف"],a:1,e:"﴿وَلَا تَكْتُمُوا الشَّهَادَةَ﴾ و﴿وَلَوْ عَلَىٰ أَنفُسِكُمْ أَوِ الْوَالِدَيْنِ وَالْأَقْرَبِينَ﴾."},
+ {q:"وصلتك رسالة في مجموعة الصف تتهم زميلاً بالسرقة، بلا دليل.",o:["أعيد إرسالها، فالكل يرسلها","أتوقف ولا أنشرها، وأطلب الدليل","أضيف تعليقاً ساخراً"],a:1,e:"﴿وَإِذَا قُلْتُمْ فَاعْدِلُوا﴾ — الكلام بلا بيّنة قد يظلم إنساناً بريئاً. تذكّر: شريح طلب البيّنة حتى من أمير المؤمنين!"},
+ {q:"في مناظرة، الطالب الذي بينك وبينه خلاف قدّم أفضل حجة، وأنت في لجنة التحكيم.",o:["أعطيه درجة أقل، فهو لا يستحق الفوز","أعطيه ما يستحق، فالخلاف لا يبرّر الظلم","أمتنع عن التقييم"],a:1,e:"﴿وَلَا يَجْرِمَنَّكُمْ شَنَآنُ قَوْمٍ عَلَىٰ أَلَّا تَعْدِلُوا ۚ اعْدِلُوا هُوَ أَقْرَبُ لِلتَّقْوَىٰ﴾."},
+ {q:"أمير المؤمنين عليه السلام كان الحاكم، ومع ذلك لم يأخذ درعه من النصراني بالقوة. ماذا يعلّمنا ذلك؟",o:["أن الحاكم فوق القانون","أن الجميع سواء أمام القضاء، حتى الحاكم","أن الدرع لم يكن مهماً"],a:1,e:"وقف الحاكم أمام القاضي كأي إنسان، فكان هذا العدل سبباً في إسلام الرجل."},
+ {q:"زميلك يقول: «لماذا الله جعل فلاناً غنياً وأنا لا؟ هذا ليس عدلاً!» ما الرد الأنسب؟",o:["معك حق، الدنيا غير عادلة","الله عادل حكيم، وعلمنا قليل، والغني والفقير كلاهما في امتحان","لا تفكر في هذه الأسئلة"],a:1,e:"كما في مثال الطبيب: لا نعرف دائماً الحكمة، لكن الله عالم بكل شيء، ولا يظلم أحداً أبداً."},
+ {q:"أخطأ زميلك في حقك ثم جاء يعتذر بصدق.",o:["أرفض حتى أردّ له الخطأ نفسه","أقبل اعتذاره وأصفح عنه","أقبل أمامه وأتكلم عنه في غيابه"],a:1,e:"﴿فَاصْفَحِ الصَّفْحَ الْجَمِيلَ﴾ — والصفح هو العفو عن المذنب، كما صفح أمير المؤمنين عليه السلام وأعطى الدرع للرجل."}
 ];
 let qi=0,right=0,done=0;
-const qnum=document.getElementById('qnum'),qtext=document.getElementById('qtext'),fb=document.getElementById('fb'),
- nw=document.getElementById('nextWrap'),beam=document.getElementById('scaleBeam'),sc=document.getElementById('score'),btns=document.querySelectorAll('#qbtns button');
-function tilt(){const wrong=done-right;const d=Math.max(-18,Math.min(18,(right-wrong)*-4));beam.style.transform='rotate('+d+'deg)';}
-function show(){ if(qi>=Q.length){qnum.textContent='';qtext.innerHTML='🎉 انتهت اللعبة! نتيجتك: '+right+' من '+Q.length+'<br><small style="font-size:18px;color:var(--muted)">عند الضغط أدناه تبدأ من جديد</small>';
-  document.getElementById('qbtns').style.display='none';fb.className='feedback';nw.style.display='block';document.getElementById('nextQ').textContent='↺ العب مرة أخرى';return;}
-  qnum.textContent='الموقف '+(qi+1)+' من '+Q.length;qtext.textContent=Q[qi][0];fb.className='feedback';nw.style.display='none';
-  document.getElementById('qbtns').style.display='flex';btns.forEach(b=>b.disabled=false);}
-btns.forEach(b=>b.onclick=()=>{const ok=(+b.dataset.a)===Q[qi][1];done++;if(ok)right++;
-  fb.className='feedback '+(ok?'ok':'no');fb.innerHTML=(ok?'✔ إجابة صحيحة — ':'✘ حاول أن تفكر مرة أخرى — ')+Q[qi][2];
-  btns.forEach(x=>x.disabled=true);nw.style.display='block';sc.textContent='النتيجة: '+right+' من '+done;tilt();});
-document.getElementById('nextQ').onclick=()=>{if(qi>=Q.length){qi=0;right=0;done=0;sc.textContent='النتيجة: 0 من 0';beam.style.transform='';document.getElementById('nextQ').textContent='السؤال التالي ←';}else qi++;show();};
+const qnum=document.getElementById('qnum'),qtext=document.getElementById('qtext'),qopts=document.getElementById('qopts'),fb=document.getElementById('fb'),
+ nw=document.getElementById('nextWrap'),beam=document.getElementById('scaleBeam'),sc=document.getElementById('score'),nq=document.getElementById('nextQ');
+function tilt(){const wrong=done-right;const d=Math.max(-18,Math.min(18,(right-wrong)*-3));beam.style.transform='rotate('+d+'deg)';}
+function show(){
+  fb.className='feedback';nw.style.display='none';qopts.innerHTML='';
+  if(qi>=Q.length){qnum.textContent='';qtext.innerHTML='🎉 أنهيت التحدي! نتيجتك: '+right+' من '+Q.length;nw.style.display='block';nq.textContent='↺ ابدأ من جديد';return;}
+  qnum.textContent='الموقف '+(qi+1)+' من '+Q.length;qtext.textContent=Q[qi].q;
+  const ord=[0,1,2].sort(()=>Math.random()-.5);
+  ord.forEach((i,pos)=>{const t=Q[qi].o[i];const b=document.createElement('button');b.className='opt';b.dataset.i=i;b.innerHTML='<span>'+'أبج'[pos]+'</span>'+t;
+    b.onclick=()=>{const ok=i===Q[qi].a;done++;if(ok)right++;
+      [...qopts.children].forEach(x=>{const j=+x.dataset.i;x.disabled=true;if(j===Q[qi].a)x.classList.add('right');else if(j===i)x.classList.add('wrong');});
+      fb.className='feedback '+(ok?'ok':'no');fb.innerHTML=(ok?'✔ أحسنت — ':'✘ ليس الأعدل — ')+Q[qi].e;
+      nw.style.display='block';sc.textContent='النتيجة: '+right+' من '+done;tilt();};
+    qopts.appendChild(b);});
+}
+nq.onclick=()=>{if(qi>=Q.length){qi=0;right=0;done=0;sc.textContent='النتيجة: 0 من 0';beam.style.transform='';nq.textContent='الموقف التالي ←';}else qi++;show();};
 show();
 </script>
 </body>
